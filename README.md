@@ -11,3 +11,6 @@ see examples run Main.main(). Then stdout will guide you through examples.
     2. Composition - Comparator Composition
     3. Composition - Predicate Composition
     4. Function Chaining and Composition
+2. Introduction to Streams
+    1. Intermediate and terminal operations demos
+    

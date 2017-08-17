@@ -17,5 +17,6 @@
     <modules>
         <module>demohelpers</module>
         <module>1-lambda-expressions</module>
+        <module>2-intro-to-streams</module>
     </modules>
 </project>
