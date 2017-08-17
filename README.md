@@ -7,7 +7,7 @@ see examples run Main.main(). Then stdout will guide you through examples.
 
 ## Demo Contents(Summary)
 1. Lambda Expression Intro
-    1.1. Behavior parametrization examples
-    1.2. Composition - Comparator Composition
-    1.3. Composition - Predicate Composition
-    1.4. Function Chaining and Composition
+    1. Behavior parametrization examples
+    2. Composition - Comparator Composition
+    3. Composition - Predicate Composition
+    4. Function Chaining and Composition
