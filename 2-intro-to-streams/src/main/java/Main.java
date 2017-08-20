@@ -6,8 +6,6 @@
 import intermediateandterminalops.IntermediateAndTerminalOpsDemo;
 import net.entrofi.studies.java8.demohelpers.AbstractChapterRunner;
 
-import java.util.Scanner;
-
 public class Main extends AbstractChapterRunner {
 
 
