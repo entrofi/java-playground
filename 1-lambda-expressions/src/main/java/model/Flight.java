@@ -18,7 +18,7 @@ public class Flight {
 
     }
 
-    public Flight(String flightNumber, String origin, String destination, Instant date) {
+    public Flight(final String flightNumber, final String origin, final String destination, final Instant date) {
         this.flightNumber = flightNumber;
         this.origin = origin;
         this.destination = destination;
@@ -59,6 +59,7 @@ public class Flight {
 
     @Override
     public String toString() {
-        return flightNumber + "-" + origin + "-" + destination + "-" + date;
+        final String delimiter = "-";
+        return flightNumber + delimiter + origin + delimiter + destination + delimiter + date;
     }
 }
