@@ -38,8 +38,8 @@ public class IntermediateAndTerminalOpsDemo implements DemoRunner {
 
     static void showIntermediatePipelineExec() {
         DemoMetaDataHelper.addTitle(TITLE);
-        FlightDataDemoHelper flightDataDemoHelper = new FlightDataDemoHelper();
-        List<Flight> flightList = flightDataDemoHelper.initFlights(15, true);
+
+        List<Flight> flightList = FlightDataDemoHelper.createFlightsFrom(null, 15);
         DemoMetaDataHelper.printList("Original list", flightList);
 
         Predicate<Flight> fromESBOrToESB = (Flight f) -> {

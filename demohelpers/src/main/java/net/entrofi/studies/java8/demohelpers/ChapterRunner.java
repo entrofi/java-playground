@@ -6,13 +6,13 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.function.Supplier;
 
-public interface ChapterRunner extends Runnable{
+public interface ChapterRunner extends Runnable {
 
     default void run() {
         init();
     }
 
-    default Map<String, Supplier> getDemoMap(){
+    default Map<String, Supplier> getDemoMap() {
         return new LinkedHashMap<>();
     }
 
@@ -25,7 +25,7 @@ public interface ChapterRunner extends Runnable{
 
     default void printExampleList() {
         int i = 1;
-        for(Map.Entry<String, Supplier> entry: getDemoMap().entrySet()) {
+        for (Map.Entry<String, Supplier> entry : getDemoMap().entrySet()) {
             System.out.println(i + ". " + entry.getKey());
             i++;
         }
@@ -35,10 +35,10 @@ public interface ChapterRunner extends Runnable{
     default void runExample() {
         Scanner in = new Scanner(System.in);
         int sampleIndex = scanIndex(in);
-        if(sampleIndex >= 0 && getDemoMap() != null && getDemoMap().size() > 0) {
+        if (sampleIndex >= 0 && getDemoMap() != null && getDemoMap().size() > 0) {
             runAt(sampleIndex);
             sampleIndex = scanIndex(in);
-            while(sampleIndex >= 0) {
+            while (sampleIndex >= 0) {
                 runAt(sampleIndex);
                 sampleIndex = scanIndex(in);
             }
@@ -47,12 +47,12 @@ public interface ChapterRunner extends Runnable{
         in.close();
     }
 
-   default void runAt(int sampleIndex) {
+    default void runAt(int sampleIndex) {
         String key = (String) getDemoMap().keySet().toArray()[sampleIndex];
-        if(getDemoMap().get(key).get() instanceof DemoRunner) {
+        if (getDemoMap().get(key).get() instanceof DemoRunner) {
             DemoRunner demoRunner = (DemoRunner) getDemoMap().get(key).get();
             demoRunner.run();
-        } else if(getDemoMap().get(key).get() instanceof ChapterRunner) {
+        } else if (getDemoMap().get(key).get() instanceof ChapterRunner) {
             ChapterRunner chapterRunner = (ChapterRunner) getDemoMap().get(key).get();
             Thread chapterThread = new Thread(chapterRunner);
             chapterThread.start();
@@ -65,8 +65,8 @@ public interface ChapterRunner extends Runnable{
     }
 
 
-   static int scanIndex(Scanner in) {
-       System.out.print("\nYour choice: ");
-       return in.hasNext()? in.nextInt() - 1 : -1;
+    static int scanIndex(Scanner in) {
+        System.out.print("\nYour choice: ");
+        return in.hasNext() ? in.nextInt() - 1 : -1;
     }
 }

@@ -13,11 +13,11 @@ public abstract class AbstractChapterRunner implements ChapterRunner {
     protected abstract void fillDemoMap();
 
 
-    public void doBeforeRun(){
+    public void doBeforeRun() {
 
     }
 
-    public void doAfterRun(){
+    public void doAfterRun() {
 
     }
 

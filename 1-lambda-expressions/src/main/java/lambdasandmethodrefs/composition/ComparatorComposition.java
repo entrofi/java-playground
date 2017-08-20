@@ -12,8 +12,7 @@ import java.util.List;
 public class ComparatorComposition implements DemoRunner {
 
     private static void reversedOrder() {
-        final FlightDataDemoHelper flightDataDemoHelper = new FlightDataDemoHelper();
-        final List<Flight> flightList = flightDataDemoHelper.initFlights(5);
+        final List<Flight> flightList = FlightDataDemoHelper.createFlightsFromTo(null, null, 5);
         DemoMetaDataHelper.addTitle("Reversed comparator exapmle: list.sort(Comparator.comparing"
                     + "(Flight::getFlightNumber).reversed())");
         DemoMetaDataHelper.printList("Unsorted List", flightList);
@@ -27,8 +26,7 @@ public class ComparatorComposition implements DemoRunner {
     }
 
     private static void chainedComparator() {
-        final FlightDataDemoHelper demoHelper = new FlightDataDemoHelper();
-        final List<Flight> flightList = demoHelper.initFlights(5);
+        final List<Flight> flightList = FlightDataDemoHelper.createFlightsFromTo(null, null, 5);
         DemoMetaDataHelper.addTitle("Chained comparator example:\n"
                     + "\t list.sort(compositeComaparator = Comparator.comparing(Flight::getFlightNumber).reversed()\n"
                     + "\t                .thenComparing(Flight::getDate);)");

@@ -13,4 +13,9 @@ see examples run Main.main(). Then stdout will guide you through examples.
     4. Function Chaining and Composition
 2. Introduction to Streams
     1. Intermediate and terminal operations demos
+3. Working with streams
+    1. Filtering and Slicing examples
+    2. Mapping examples
+    3. Finding and matching
+    4. Basic reduction
     

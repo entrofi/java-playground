@@ -82,8 +82,7 @@ public class BehaviorParameterizationAlternatives implements DemoRunner {
 
     private static List<Flight> initFlightsAndPrintTitle(String title) {
         DemoMetaDataHelper.addTitle(title);
-        final FlightDataDemoHelper flightDataDemoHelper = new FlightDataDemoHelper();
-        List<Flight> flightList = flightDataDemoHelper.initFlights(10);
+        List<Flight> flightList = FlightDataDemoHelper.createFlightsFromTo(null, null, 10);
         DemoMetaDataHelper.printList("Unsorted list", flightList);
         return flightList;
     }

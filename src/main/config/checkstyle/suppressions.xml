@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<!--
+  ~ Copyright 2003-2016 Monitise Group Limited. All Rights Reserved.
+  ~
+  ~ Save to the extent permitted by law, you may not use, copy, modify,
+  ~ distribute or create derivative works of this material or any part
+  ~ of it without the prior written consent of Monitise Group Limited.
+  ~ Any reproduction of this material must contain this notice.
+  -->
+
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+        "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+    <!--sample usage-->
+    <!--<suppress files="core/src/main/java/com/entrofi/mea/common/core/interceptors/BaseGeneralInterceptor.java" checks="IllegalCatchCheck" />-->
+
+    <suppress
+            files="src[\\/]main[\\/]java[\\/]net[\\/]entrofi[\\/]studies[\\/]java8[\\/]demohelpers[\\/]sampledatahelpers[\\/]"
+              checks="JavaNCSS" />
+    <suppress
+            files="src[\\/]main[\\/]java[\\/]net[\\/]entrofi[\\/]studies[\\/]java8[\\/]demohelpers[\\/]sampledatahelpers[\\/]"
+            checks="VisibilityModifier" />
+    <suppress
+            files="src[\\/]main[\\/]java[\\/]net[\\/]entrofi[\\/]studies[\\/]java8[\\/]demohelpers[\\/]sampledatahelpers[\\/]"
+            checks="MultipleStringLiterals" />
+    <suppress
+            files="src[\\/]main[\\/]java[\\/]net[\\/]entrofi[\\/]studies[\\/]java8[\\/]demohelpers[\\/]sampledatahelpers[\\/]"
+            checks="ExecutableStatementCount" />
+    <suppress
+            files="src[\\/]main[\\/]java[\\/]net[\\/]entrofi[\\/]studies[\\/]java8[\\/]demohelpers[\\/]sampledatahelpers[\\/]"
+            checks="FileLength" />
+    <suppress
+            files="src[\\/]main[\\/]java[\\/]net[\\/]entrofi[\\/]studies[\\/]java8[\\/]demohelpers[\\/]DemoMetaDataHelper.java"
+            checks="MultipleStringLiterals" />
+    <suppress
+            files="src[\\/]main[\\/]java[\\/]net[\\/]entrofi[\\/]studies[\\/]java8[\\/]demohelpers[\\/]AbstractChapterRunner.java"
+            checks="VisibilityModifier" />
+
+</suppressions>

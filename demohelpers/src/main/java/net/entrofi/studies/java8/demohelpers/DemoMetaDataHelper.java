@@ -10,18 +10,20 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static  java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.maxBy;
 
 public final class DemoMetaDataHelper {
     private static final String TAB = "    ";
 
+    private DemoMetaDataHelper() {
+    }
 
-    public static void printMessage(String message ) {
+    public static void printMessage(String message) {
         printMessage(message, null);
     }
 
     public static void printMessage(String message, String decorator) {
-        if(StringUtils.isEmpty(decorator)) {
+        if (StringUtils.isEmpty(decorator)) {
             System.out.print(message);
         } else {
             message = replaceTabs(message) + TAB;
@@ -32,12 +34,12 @@ public final class DemoMetaDataHelper {
 
     public static void addTitle(String title) {
         title = replaceTabs(title);
-        String stars =  headFooterBuilder((title + TAB).length());
+        String stars = headFooterBuilder((title + TAB).length());
         System.out.println(stars + title + stars);
     }
 
     private static String replaceTabs(String title) {
-        title =  TAB + title.replaceAll("\t", TAB);
+        title = TAB + title.replaceAll("\t", TAB);
         return title;
     }
 
@@ -51,9 +53,9 @@ public final class DemoMetaDataHelper {
                     .get()
                     .length() + startOfLine.length() + endOfLine.length();
 
-        for(int i = 0; i < lines.length; i++) {
+        for (int i = 0; i < lines.length; i++) {
             lines[i] = appendSpaces(lines[i], maxLineLength);
-            lines[i] =  i < lines.length - 1 ? lines[i] + endOfLine : lines[i] + " *";
+            lines[i] = i < lines.length - 1 ? lines[i] + endOfLine : lines[i] + " *";
             lines[i] = startOfLine + lines[i];
             builder.append(lines[i]);
         }
@@ -66,7 +68,7 @@ public final class DemoMetaDataHelper {
         decorator = StringUtils.isNotEmpty(decorator) && decorator.length() == 1 ? decorator : "*";
         StringBuilder starBuilder = new StringBuilder();
         starBuilder.append("\n");
-        for(int i = 0; i <= length + 3; i++) {
+        for (int i = 0; i <= length + 3; i++) {
             starBuilder.append(decorator);
         }
         starBuilder.append("\n");
@@ -82,8 +84,7 @@ public final class DemoMetaDataHelper {
             @Override
             public String get() {
                 return " ";
-            }
-        }).limit(lineLength - input.length()).collect(Collectors.joining());
+            } }).limit(lineLength - input.length()).collect(Collectors.joining());
 
         return input + suffix;
     }

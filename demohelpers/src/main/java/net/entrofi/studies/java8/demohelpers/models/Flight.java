@@ -61,7 +61,8 @@ public class Flight {
 
     @Override
     public String toString() {
-        return flightNumber + "-" + origin + "-" + destination + "-" + date + "-" + flightStatus;
+        final String delim = "-";
+        return flightNumber + delim + origin + delim + destination + delim + date + delim + flightStatus;
     }
 
 
