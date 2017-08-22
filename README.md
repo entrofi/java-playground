@@ -1,5 +1,7 @@
 # java 8 Playground
-Demos and Samples for Java 8 .
+Demos and Samples for Java 8. This repository contains various showcases for Java 8 functional properties and lambda 
+expressions. Most of the examples here, are build on a flight plan model for some airline. In order to see demos in 
+practice take a look at Running Demos section below. 
 
 ## Running Demos
 Each module in the project contains a Main class for execution of the examples related with that module. In order to 
