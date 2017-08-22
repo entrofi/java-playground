@@ -38,5 +38,8 @@
     <suppress
             files="src[\\/]main[\\/]java[\\/]net[\\/]entrofi[\\/]studies[\\/]java8[\\/]demohelpers[\\/]AbstractChapterRunner.java"
             checks="VisibilityModifier" />
+    <suppress
+            files="src[\\/]main[\\/]java[\\/]collectdata[\\/]reducingandsummarizing[\\/]"
+            checks="Indentation" />
 
 </suppressions>

@@ -44,28 +44,43 @@ public final class DemoMetaDataHelper {
     }
 
     public static <T> void printList(String message, List<T> elements) {
+        printList(message, elements, "\n", "*");
+    }
+
+    public static <T> void printList(String message, List<T> elements, String delimiter, String decorator) {
         StringBuilder builder = new StringBuilder();
         String[] lines = message.replaceAll("\t", TAB).split("\n");
-        final String startOfLine = "* ";
-        final String endOfLine = " *\n";
+        final String startOfLine = decorator != null ? decorator + " " : " ";
+        final String endOfLine =  decorator != null ? decorator + "\n" : "\n";
+        final String midLine = decorator != null ? " " + decorator : " ";
         int maxLineLength = Arrays.stream(lines)
                     .collect(maxBy(Comparator.comparingInt(s -> s.length())))
                     .get()
                     .length() + startOfLine.length() + endOfLine.length();
+        int spaceCorrectionBound = startOfLine.length() + endOfLine.length() - 2 * decorator.length();
 
         for (int i = 0; i < lines.length; i++) {
-            lines[i] = appendSpaces(lines[i], maxLineLength);
-            lines[i] = i < lines.length - 1 ? lines[i] + endOfLine : lines[i] + " *";
+            lines[i] = appendSpaces(lines[i], maxLineLength * decorator.length() + spaceCorrectionBound);
+            lines[i] = i < lines.length - 1 ? lines[i] + endOfLine : lines[i] + midLine;
             lines[i] = startOfLine + lines[i];
             builder.append(lines[i]);
         }
-        String stars = headFooterBuilder(maxLineLength);
-        System.out.print(stars + builder.toString() + stars);
-        elements.forEach(System.out::println);
+        String headerFooter = headerFooterBuilder(maxLineLength, decorator);
+        message = builder.toString();
+        builder.setLength(0);
+        builder.append(headerFooter)
+                    .append(message)
+                    .append(headerFooter);
+
+        String listStr = elements.stream()
+                    .map(e -> e.toString())
+                    .collect(Collectors.joining(delimiter));
+        builder.append(listStr);
+        System.out.print(builder.toString());
     }
 
     private static String headerFooterBuilder(int length, String decorator) {
-        decorator = StringUtils.isNotEmpty(decorator) && decorator.length() == 1 ? decorator : "*";
+        decorator = decorator != null ? decorator : "*";
         StringBuilder starBuilder = new StringBuilder();
         starBuilder.append("\n");
         for (int i = 0; i <= length + 3; i++) {

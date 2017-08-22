@@ -65,5 +65,6 @@
         <module>1-lambda-expressions</module>
         <module>2-intro-to-streams</module>
         <module>3-working-with-streams</module>
+        <module>4-data-collection-with-streams</module>
     </modules>
 </project>
